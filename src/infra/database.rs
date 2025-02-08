@@ -17,4 +17,3 @@ pub async fn run_migrations(db: DbPool) -> anyhow::Result<()> {
 
     Ok(())
 }
-

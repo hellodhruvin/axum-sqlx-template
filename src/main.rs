@@ -3,8 +3,8 @@ use std::net::SocketAddr;
 use tokio::net::TcpListener;
 use tracing::info;
 
-use template_please_change::infra::app;
 use template_please_change::config::Config;
+use template_please_change::infra::app;
 use template_please_change::infra::database;
 
 #[tokio::main]
@@ -19,8 +19,7 @@ async fn main() -> anyhow::Result<()> {
     database::run_migrations(pool.clone()).await?;
     info!("Database migrations completed");
 
-    let app = app::create_app(pool, config.allowed_origins)
-        .await;
+    let app = app::create_app(pool, config.allowed_origins).await;
     axum::serve(listener, app).await?;
 
     Ok(())
