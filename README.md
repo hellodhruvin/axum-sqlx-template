@@ -52,35 +52,36 @@ Check [src/config.rs](./src/config.rs) for necessary environemnt variables.
 
 2. Create database
 
-```
-sqlx database create
-```
+   ```
+   sqlx database create
+   ```
+
 3. Create a migration
 
-> Note: You just need to do this step so it creates a "migrations" directory,
-> you don't necessarily need to add anything in the migration files yet.
+   > Note: You just need to do this step so it creates a "migrations" directory,
+   > you don't necessarily need to add anything in the migration files yet.
 
-```
-sqlx migrate add -r init
-```
+   ```
+   sqlx migrate add -r init
+   ```
 
 4. Run the app
 
-```
-cargo run
-```
+   ```
+   cargo run
+   ```
 
 # Deploy the app for production
 
 1. Update the environment file:
 
-Copy the .env.sample file to .env and then modify the contents for production
+   Copy the .env.sample file to .env and then modify the contents for production
 
 2. Run the app:
 
-```
-docker-compose up -d
-```
+   ```
+   docker-compose up -d
+   ```
 
 ## Adding TLS Encryption (HTTPS)
 
