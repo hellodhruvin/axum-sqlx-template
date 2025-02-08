@@ -16,7 +16,7 @@ async fn main() -> anyhow::Result<()> {
     info!("Server listening on {}", &address);
 
     let pool = database::create_connection(config.database_url).await?;
-    database::run_migrations(pool.clone());
+    database::run_migrations(pool.clone()).await?;
     info!("Database migrations completed");
 
     let app = app::create_app(pool, config.allowed_origins)
