@@ -14,7 +14,7 @@ use crate::infra::logging;
 
 #[derive(Debug, Clone)]
 pub struct AppState {
-    db: DbPool,
+    pub db: DbPool,
 }
 
 pub async fn create_app(db: DbPool, allowed_origins: Vec<String>) -> Router {

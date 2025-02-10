@@ -26,6 +26,10 @@ impl AppError {
         }
     }
 
+    pub fn bad_request() -> Self {
+        AppError::BadRequest(BadRequest {})
+    }
+
     pub fn not_found() -> Self {
         AppError::NotFound(NotFound {})
     }
